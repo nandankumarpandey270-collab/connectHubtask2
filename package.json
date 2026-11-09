@@ -1,0 +1,25 @@
+{
+  "name": "codealpha_task2",
+  "version": "1.0.0",
+  "description": "ConnectHub - Social Media Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "social-media",
+    "express",
+    "sqlite"
+  ],
+  "author": "Nandan Pandey",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.0.3",
+    "express": "^5.3.0",
+    "express-session": "^1.19.0",
+    "socket.io": "^4.8.4"
+  }
+}

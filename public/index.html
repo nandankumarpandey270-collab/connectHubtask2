@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectHub - Social Network</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <!-- Authentication -->
+    <section id="authSection" class="auth-section">
+        <div class="auth-card">
+            <h1>Connect<span>Hub.</span></h1>
+            <p class="subtitle">Connect with your world.</p>
+
+            <h2 id="authTitle">Welcome Back</h2>
+            <p id="authDescription">Login to continue your journey.</p>
+
+            <form id="authForm">
+                <div id="authNameField" hidden>
+                    <input type="text" id="authName" placeholder="Full Name">
+                </div>
+
+                <div id="authUsernameField" hidden>
+                    <input type="text" id="authUsername" placeholder="Username">
+                </div>
+
+                <input type="email" id="authEmail"
+                    placeholder="Email Address" required>
+
+                <input type="password" id="authPassword"
+                    placeholder="Password (minimum 8 characters)" required>
+
+                <button type="submit" id="authSubmit">Login</button>
+            </form>
+
+            <p id="authMessage"></p>
+
+            <p class="switch-text">
+                <span id="authSwitchText">Don't have an account?</span>
+                <button type="button" id="authSwitch">Sign Up</button>
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Application -->
+    <div id="appSection" hidden>
+
+        <!-- Navigation -->
+        <header class="navbar">
+            <div class="nav-container">
+                <h1>Connect<span>Hub.</span></h1>
+
+                <input type="search" id="userSearch"
+                    placeholder="Search people...">
+
+                <div class="nav-actions">
+                    <span id="navUsername"></span>
+                    <button id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-layout">
+
+            <!-- Left Profile Sidebar -->
+            <aside class="sidebar">
+                <div class="profile-card">
+                    <div class="profile-cover"></div>
+                    <div class="avatar" id="profileAvatar">N</div>
+
+                    <h2 id="profileName">Your Name</h2>
+                    <p id="profileUsername">@username</p>
+                    <p id="profileBio">Welcome to ConnectHub!</p>
+
+                    <div class="profile-stats">
+                        <div>
+                            <strong id="myPosts">0</strong>
+                            <span>Posts</span>
+                        </div>
+                        <div>
+                            <strong id="myFollowers">0</strong>
+                            <span>Followers</span>
+                        </div>
+                        <div>
+                            <strong id="myFollowing">0</strong>
+                            <span>Following</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Feed -->
+            <section class="feed">
+
+                <div class="welcome-section">
+                    <h2>Your Feed</h2>
+                    <p>Discover what's happening in your community.</p>
+                </div>
+
+                <!-- Create Post -->
+                <div class="create-post">
+                    <h3>Create a Post</h3>
+
+                    <textarea id="postContent"
+                        placeholder="What's happening in your world?"
+                        maxlength="2000"></textarea>
+
+                    <div class="post-controls">
+                        <span>Share your thoughts with the world.</span>
+                        <button id="publishBtn">Publish Post</button>
+                    </div>
+
+                    <p id="message"></p>
+                </div>
+
+                <!-- Feed Posts -->
+                <div class="posts-header">
+                    <h3>Latest Posts</h3>
+                </div>
+
+                <div id="postsContainer">
+                    <p class="empty-feed">Loading posts...</p>
+                </div>
+
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside class="right-sidebar">
+                <div class="suggestion-card">
+                    <h3>Discover People</h3>
+                    <div id="suggestedUsers">
+                        <p>Find new people to connect with.</p>
+                    </div>
+                </div>
+
+                <div class="suggestion-card">
+                    <h3>About ConnectHub</h3>
+                    <p>A place to connect, share ideas and build meaningful relationships.</p>
+                </div>
+            </aside>
+
+        </main>
+
+        <footer>
+            <p>© 2026 ConnectHub. Made for connecting people.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
